@@ -1,0 +1,2 @@
+cd StudyRecord
+dotnet run
