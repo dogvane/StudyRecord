@@ -1,0 +1,51 @@
+@StudyRecord_HostAddress = http://localhost:5273
+
+# 获取天气预报
+GET {{StudyRecord_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+# 示例POST请求
+POST {{StudyRecord_HostAddress}}/api/study
+Content-Type: application/json
+
+{
+  "title": "学习.NET Core",
+  "duration": 120,
+  "date": "2023-06-15T14:30:00",
+  "notes": "学习了ASP.NET Core Web API"
+}
+
+###
+
+# 示例GET单个资源
+GET {{StudyRecord_HostAddress}}/api/study/1
+Accept: application/json
+
+###
+
+# 示例PUT请求
+PUT {{StudyRecord_HostAddress}}/api/study/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "更新的学习记录",
+  "duration": 150,
+  "date": "2023-06-15T14:30:00",
+  "notes": "更新了学习内容"
+}
+
+###
+
+# 示例DELETE请求
+DELETE {{StudyRecord_HostAddress}}/api/study/1
+
+###
+
+# 使用查询参数的GET请求
+GET {{StudyRecord_HostAddress}}/api/study?fromDate=2023-06-01&toDate=2023-06-30
+Accept: application/json
+
+###

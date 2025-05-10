@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "学习笔记",
+  "version": "1.0",
+  "description": "将选中文本发送到大模型进行学习和总结",
+  "author": "dogvane",
+  "homepage_url": "http://github.com/dogvane/StudyRecord",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5273/*",
+    "http://localhost:5273/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_script.js"
+      ],
+      "css": [
+        "content-styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "插件设置",
+    "default_popup": "popup.html"
+  }
+}
